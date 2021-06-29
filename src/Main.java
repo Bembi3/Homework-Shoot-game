@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Player player = new Player();
         // Как настоящие программисты мы имеем в виду, что исчисление начинается с 0
@@ -23,7 +23,9 @@ public class Main {
                 System.out.println("Game Over!");
                 return;
             }
-            player.shotWithWeapon(slot);
+            try {
+                player.shotWithWeapon(slot);
+            }catch(ArrayIndexOutOfBoundsException ex){}
         }
     }
 }

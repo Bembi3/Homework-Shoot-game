@@ -1,5 +1,10 @@
+import weapons.MachineGun;
+import weapons.Pistol;
+import weapons.WaterGun;
+import weapons.Weapon;
+
 class Player {
-    // Указываем тип данных Weapon, который будет храниться в "слотах игрока"
+    // Указываем тип данных weapons.Weapon, который будет храниться в "слотах игрока"
     private final Weapon[] weaponSlots;
 
     public Player() {
@@ -18,17 +23,10 @@ class Player {
     }
 
 
-    public void shotWithWeapon(int slot) throws Exception {
-        // TODO проверить на выход за границы
-        // выбросить IllegalArgumentException,
-        // если значение slot некорректно
-        try {
+    public void shotWithWeapon(int slot) {
             slot--;
-            if (slot < 0 || slot >= getSlotsCount())
-                throw new IllegalArgumentException("Такого оружия нет. Попробуй снова");
-        }catch (IllegalArgumentException ex){
-            System.out.println(ex.getMessage());
-            return;
+                if (slot < 0 || slot >= getSlotsCount()){
+            System.out.println("Такого оружия нет. Попробуй снова");
         }
         // Получаем оружие из выбранного слота
         Weapon weapon = weaponSlots[slot];

@@ -1,4 +1,6 @@
-public class MachineGun extends Weapon{
+package weapons;
+
+public class MachineGun extends Weapon {
     public void shoot() {
         System.out.println("Machinegun Shoot");
     }
